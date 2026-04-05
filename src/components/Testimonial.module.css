@@ -1,0 +1,23 @@
+.testimonial {
+  background: var(--ink); padding: 7rem 4rem;
+  text-align: center; position: relative; overflow: hidden;
+}
+.testimonial::before {
+  content: '"';
+  font-family: var(--ff-display); font-size: 20rem; font-weight: 300;
+  color: rgba(184,147,90,0.05);
+  position: absolute; top: -4rem; left: 50%; transform: translateX(-50%);
+  line-height: 1; pointer-events: none;
+}
+.text {
+  font-family: var(--ff-display); font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300; font-style: italic;
+  color: var(--white); line-height: 1.5;
+  max-width: 820px; margin: 0 auto;
+  position: relative; z-index: 1;
+}
+.author {
+  margin-top: 2.5rem; font-size: 0.72rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold);
+}
+.role { color: var(--warm); margin-top: 0.3rem; font-size: 0.7rem; }

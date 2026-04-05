@@ -1,0 +1,113 @@
+/* ===================================================
+   FORMA — Global Styles
+   =================================================== */
+
+/* ===== RESET & ROOT ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ink:        #0e0c0a;
+  --cream:      #f5f0e8;
+  --stone:      #c8bfb0;
+  --sand:       #e8dfd0;
+  --gold:       #b8935a;
+  --warm:       #7a6652;
+  --white:      #fdfaf5;
+  --ff-display: 'Cormorant Garamond', Georgia, serif;
+  --ff-body:    'DM Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  /* Prevent horizontal overflow at html level — safer than body */
+  overflow-x: clip;
+}
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--ff-body);
+  font-weight: 300;
+  /* Do NOT set overflow-x: hidden on body — it creates a new stacking
+     context that clips position:fixed children and hides the footer */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make main grow so footer is always pushed to bottom */
+main { flex: 1; }
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ===== SHARED BUTTONS ===== */
+.btn-primary {
+  background: var(--gold); color: var(--white);
+  padding: 1rem 2.4rem;
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none; font-weight: 400;
+  transition: background 0.3s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--warm); }
+
+.btn-ghost {
+  color: var(--warm); font-size: 0.72rem; letter-spacing: 0.18em;
+  text-transform: uppercase; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+}
+.btn-ghost::after { content: '→'; font-size: 1rem; transition: transform 0.3s; }
+.btn-ghost:hover::after { transform: translateX(4px); }
+
+/* ===== SECTION COMMON ===== */
+section { padding: 7rem 4rem; }
+
+.section-label {
+  font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.2rem; display: block;
+}
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300; line-height: 1.05;
+  color: var(--ink);
+}
+.section-title em { font-style: italic; color: var(--warm); }
+
+/* ===== REVEAL ANIMATION ===== */
+.reveal {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+
+/* ===== GLOBAL KEYFRAMES ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn  { to { opacity: 1; } }
+@keyframes drawLine { to { stroke-dashoffset: 0; } }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes scrollDown {
+  0%   { top: -100%; }
+  100% { top: 100%;  }
+}
+
+/* ===== RESPONSIVE HELPERS ===== */
+@media (max-width: 1024px) {
+  section { padding: 5rem 2rem; }
+}
+@media (max-width: 600px) {
+  section { padding: 4rem 1.5rem; }
+}

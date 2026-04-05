@@ -1,0 +1,60 @@
+.footer {
+  background: var(--ink);
+  padding: 3rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  /* Ensure footer is always fully visible */
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.logoLink { display: flex; align-items: center; text-decoration: none; }
+.logoImg {
+  height: 44px !important;
+  width: auto !important;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.88;
+  transition: opacity 0.3s;
+}
+.logoImg:hover { opacity: 1; }
+
+.copy {
+  font-size: 0.7rem; color: var(--warm);
+  letter-spacing: 0.1em; text-align: center;
+}
+
+.socials { display: flex; gap: 1.5rem; align-items: center; }
+.socials a {
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--stone); text-decoration: none; transition: color 0.3s;
+}
+.socials a:hover { color: var(--gold); }
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .footer {
+    flex-direction: column;
+    gap: 1.8rem;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+  .logoImg { height: 50px !important; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .footer {
+    padding: 2.5rem 1.5rem;
+    gap: 1.5rem;
+  }
+  .socials {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .copy { font-size: 0.65rem; line-height: 1.7; }
+}

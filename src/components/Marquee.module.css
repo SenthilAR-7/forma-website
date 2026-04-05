@@ -1,0 +1,18 @@
+.strip {
+  background: var(--gold); padding: 1rem 0;
+  overflow: hidden; white-space: nowrap;
+}
+.inner {
+  display: inline-flex; gap: 3rem;
+  animation: marquee 22s linear infinite;
+}
+.inner span {
+  font-family: var(--ff-display); font-style: italic;
+  font-size: 1.1rem; color: var(--white); letter-spacing: 0.08em;
+}
+.dot { color: rgba(255,255,255,0.5) !important; font-style: normal !important; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
