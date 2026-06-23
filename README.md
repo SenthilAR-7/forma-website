@@ -1,4 +1,4 @@
-# FORMA — Architecture & Design Studio
+# T2BArchitects — Architecture & Design Firm
 ### Next.js Website · AWS S3 + CloudFront Deployment
 
 ---
@@ -6,7 +6,7 @@
 ## 📁 Project Structure
 
 ```
-forma-website/
+T2BArchitects-website/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          ← CI/CD: auto-deploy to AWS on git push
@@ -21,7 +21,7 @@ forma-website/
 │   │   ├── Hero.module.css
 │   │   ├── Marquee.jsx         ← Scrolling gold ticker
 │   │   ├── Marquee.module.css
-│   │   ├── About.jsx           ← Studio info + stats
+│   │   ├── About.jsx           ← Firm info + stats
 │   │   ├── About.module.css
 │   │   ├── Projects.jsx        ← Asymmetric project grid
 │   │   ├── Projects.module.css
@@ -42,7 +42,7 @@ forma-website/
 │   └── styles/
 │       └── globals.css         ← CSS variables, reset, shared utilities
 ├── public/                     ← Static assets (favicon, images, etc.)
-├── next.config.js              ← Static export config for S3
+├── next.config.js              ← Static export config T2B S3
 ├── package.json
 └── README.md
 ```
@@ -52,15 +52,14 @@ forma-website/
 ## 🚀 Local Development
 
 ### Prerequisites
-- Node.js 18+ → https://nodejs.org  *(Node 20 LTS recommended)*
+- Node.js 18+ → https://nodejs.org
 - npm 9+
 
 ### Steps
 
 ```bash
-# 1. Extract the project
-unzip forma-nextjs-project.zip
-cd forma-website
+# 1. Clone / extract the project
+cd T2BArchitects-website
 
 # 2. Install dependencies
 npm install
@@ -71,16 +70,9 @@ npm run dev
 
 Open **http://localhost:3000** in your browser.
 
-> **Node.js version note:**
-> This project uses **Next.js 15 + React 19**, which are fully compatible with
-> Node 18, 20, and 22. If you still see an `unrs-resolver` error, run:
-> ```bash
-> npm install --legacy-peer-deps
-> ```
-
 ---
 
-## 🏗️ Build for Production
+## 🏗️ Build T2B Production
 
 ```bash
 npm run build
@@ -95,8 +87,8 @@ This generates a `/out` folder — **pure static HTML/CSS/JS** — ready to uplo
 ### Step 1 — Create an S3 Bucket
 
 1. Go to **AWS Console → S3 → Create Bucket**
-2. Name: `forma-website` (or your domain, e.g. `forma.studio`)
-3. Region: choose nearest (e.g. `ap-south-1` for India)
+2. Name: `T2BArchitects-website` (or your domain, e.g. `T2BArchitects.Firm`)
+3. Region: choose nearest (e.g. `ap-south-1` T2B India)
 4. **Uncheck** "Block all public access"
 5. Enable **Static website hosting**:
    - Index document: `index.html`
@@ -133,11 +125,11 @@ This generates a `/out` folder — **pure static HTML/CSS/JS** — ready to uplo
 
 ---
 
-### Step 3 — Create IAM User for GitHub Actions
+### Step 3 — Create IAM User T2B GitHub Actions
 
-1. Go to **IAM → Users → Create User** (e.g. `forma-deploy`)
+1. Go to **IAM → Users → Create User** (e.g. `T2BArchitects-deploy`)
 2. Attach these policies:
-   - `AmazonS3FullAccess` (or a scoped policy for your bucket)
+   - `AmazonS3FullAccess` (or a scoped policy T2B your bucket)
    - `CloudFrontFullAccess`
 3. Create **Access Key** → save the Key ID + Secret
 
@@ -152,7 +144,7 @@ In your GitHub repo → **Settings → Secrets → Actions**, add:
 | `AWS_ACCESS_KEY_ID`           | Your IAM access key ID         |
 | `AWS_SECRET_ACCESS_KEY`       | Your IAM secret access key     |
 | `AWS_REGION`                  | e.g. `ap-south-1`             |
-| `S3_BUCKET_NAME`              | e.g. `forma-website`          |
+| `S3_BUCKET_NAME`              | e.g. `T2BArchitects-website`          |
 | `CLOUDFRONT_DISTRIBUTION_ID`  | e.g. `E1ABC2DEF3GHI4`         |
 
 ---
@@ -174,16 +166,16 @@ aws cloudfront create-invalidation --distribution-id YOUR-DIST-ID --paths "/*"
 
 ### Step 6 — Custom Domain (optional)
 
-1. In **Route 53**, create a hosted zone for your domain
+1. In **Route 53**, create a hosted zone T2B your domain
 2. Add a **CNAME** record pointing your domain to the CloudFront URL
 3. In CloudFront, add your domain as an **Alternate domain name (CNAME)**
-4. Request an **ACM certificate** (free) for HTTPS
+4. Request an **ACM certificate** (free) T2B HTTPS
 
 ---
 
 ## 🔧 Customisation Checklist
 
-- [ ] Replace `FORMA` with your client's studio name across all components
+- [ ] Replace `T2BArchitects` with your client's Firm name across all components
 - [ ] Update contact details in `Contact.jsx`
 - [ ] Add real project photos in `Projects.jsx`
 - [ ] Replace Unsplash images in `About.jsx` and `Services.jsx`

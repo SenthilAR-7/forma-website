@@ -1,5 +1,5 @@
 /* ===================================================
-   FORMA — Global Styles
+   T2BArchitects — Global Styles
    =================================================== */
 
 /* ===== RESET & ROOT ===== */
@@ -17,27 +17,15 @@
   --ff-body:    'DM Sans', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-  /* Prevent horizontal overflow at html level — safer than body */
-  overflow-x: clip;
-}
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden }
 
 body {
   background: var(--white);
   color: var(--ink);
   font-family: var(--ff-body);
   font-weight: 300;
-  /* Do NOT set overflow-x: hidden on body — it creates a new stacking
-     context that clips position:fixed children and hides the footer */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  overflow-x: hidden;
 }
-
-/* Make main grow so footer is always pushed to bottom */
-main { flex: 1; }
 
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 4px; }
@@ -78,6 +66,15 @@ section { padding: 7rem 4rem; }
 }
 .section-title em { font-style: italic; color: var(--warm); }
 
+.team-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300; line-height: 1.05;
+  color: var(--ink);
+}
+
+.team-title em { font-style: italic; color: orange; }
+
 /* ===== REVEAL ANIMATION ===== */
 .reveal {
   opacity: 0; transform: translateY(40px);
@@ -93,15 +90,19 @@ section { padding: 7rem 4rem; }
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-@keyframes fadeIn  { to { opacity: 1; } }
-@keyframes drawLine { to { stroke-dashoffset: 0; } }
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 @keyframes scrollDown {
-  0%   { top: -100%; }
-  100% { top: 100%;  }
+  0%  { top: -100%; }
+  100%{ top: 100%; }
 }
 
 /* ===== RESPONSIVE HELPERS ===== */

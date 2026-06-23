@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
       <head>
-        <script async src="//www.instagram.com/embed.js" />
+        {/* <script async src="//www.instagram.com/embed.js" /> */}
       </head>
       <body>{children}</body>
     </html>

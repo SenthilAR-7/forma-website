@@ -37,8 +37,8 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="T2B Architects — Architecture & Interior Design Firm"
-            width={240}
-            height={80}
+            width={180}
+            height={60}
             className={styles.logoImg}
             priority
           />
@@ -78,8 +78,8 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="T2B Architects"
-            width={200}
-            height={72}
+            width={160}
+            height={54}
             className={styles.drawerLogoImg}
           />
         </div>

@@ -11,6 +11,7 @@ import Process         from '../components/Process'
 import Testimonial     from '../components/Testimonial'
 import Contact         from '../components/Contact'
 import Footer          from '../components/Footer'
+import Team from '../components/Team'
 
 export default function HomePage() {
   useReveal()
@@ -27,9 +28,10 @@ export default function HomePage() {
         <InstagramReels />
         <Process />
         <Testimonial />
+        <Team />
         <Contact />
+        <Footer />
       </main>
-      <Footer />
     </>
   )
 }

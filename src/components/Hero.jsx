@@ -224,18 +224,18 @@ export default function Hero() {
 
       {/* Hero text content */}
       <div className={styles.content}>
-        <p className={styles.eyebrow}>Architecture &amp; Interior Design Studio</p>
+        <p className={styles.eyebrow}>Architecture &amp; Interior Design Firm</p>
         <h1 className={styles.title}>
           We design<br /><em>spaces that</em><br />endure.
         </h1>
         <p className={styles.subtitle}>
-          FORMA crafts architecture that balances form and humanity — where every
+          T2BArchitects crafts architecture that balances form and humanity — where every
           structure tells a story rooted in place, culture, and light.
         </p>
-        <div className={styles.actions}>
+        {/* <div className={styles.actions}>
           <a href="#projects" className="btn-primary">View Projects</a>
           <a href="#about" className="btn-ghost">Our Philosophy</a>
-        </div>
+        </div> */}
       </div>
 
       {/* Scroll hint */}

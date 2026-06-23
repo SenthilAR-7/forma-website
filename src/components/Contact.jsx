@@ -3,10 +3,10 @@ import { useState } from 'react'
 import styles from './Contact.module.css'
 
 const details = [
-  { label: 'Studio Address', val: '14 Corniche Boulevard\nChennai, Tamil Nadu 600001' },
-  { label: 'Email',          val: 'hello@forma.studio'  },
-  { label: 'Phone',          val: '+91 99400 00000'      },
-  { label: 'Follow',         val: '@forma.studio'        },
+  { label: 'Firm Address', val: '2A, TPK main road,\nThiruparankundram, Madurai,\nTamil Nadu 625004' },
+  { label: 'Email',          val: 't2barchitects@gmail.com'  },
+  { label: 'Phone',          val: '+91 97504 33204'      },
+  // { label: 'Follow',         val: '@T2BArchitects.Firm'        },
 ]
 
 const projectTypes = [

@@ -1,58 +1,60 @@
-name: Deploy to GitHub Pages
+name: Deploy to AWS S3 + CloudFront
 
 on:
   push:
-    branches: [main]       # Auto-deploy on every push to main
-  workflow_dispatch:        # Allow manual trigger from GitHub UI
-
-# Required permissions for GitHub Pages deployment
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Only allow one deployment at a time
-concurrency:
-  group: pages
-  cancel-in-progress: true
+    branches: [main]      # Auto-deploy on every push to main
+  workflow_dispatch:       # Allow manual trigger from GitHub UI
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # 1. Checkout code
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
+      # 3. Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
+      # 4. Build & export static files
       - name: Build Next.js (static export)
         run: npm run build
         env:
           NODE_ENV: production
 
-      # Add .nojekyll so GitHub Pages serves _next folder correctly
-      - name: Add .nojekyll file
-        run: touch ./out/.nojekyll
-
-      - name: Upload build artifact
-        uses: actions/upload-pages-artifact@v3
+      # 5. Upload /out folder to S3
+      - name: Deploy to S3
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          path: ./out
+          aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region:            ${{ secrets.AWS_REGION }}
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Sync to S3 bucket
+        run: |
+          aws s3 sync ./out s3://${{ secrets.S3_BUCKET_NAME }} \
+            --delete \
+            --cache-control "public, max-age=31536000, immutable" \
+            --exclude "*.html"
+
+          # HTML files — no cache (always fresh)
+          aws s3 sync ./out s3://${{ secrets.S3_BUCKET_NAME }} \
+            --delete \
+            --cache-control "public, max-age=0, must-revalidate" \
+            --include "*.html"
+
+      # 6. Invalidate CloudFront cache
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"

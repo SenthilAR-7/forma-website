@@ -1,10 +1,10 @@
 import styles from './Projects.module.css'
 
 const projects = [
-  { type: 'Residential', name: 'Villa Serrinha',        year: '2024 — Lisbon, Portugal',  img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80' },
-  { type: 'Commercial',  name: 'Meridian Tower',         year: '2023 — Mumbai, India',     img: 'https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=900&q=80'  },
-  { type: 'Residential', name: 'Casa Bruma',             year: '2023 — Amalfi, Italy',     img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80'  },
-  { type: 'Cultural',    name: 'Khin Cultural Centre',   year: '2022 — Bangalore, India',  img: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=1100&q=80' },
+  { type: 'Residential', name: 'Sri Vari Illam',        year: '2026 — Madurai, India',  img: '/projectOne.png?w=1200&q=80' },
+  { type: 'Commercial',  name: 'SoleSpace',         year: '2025 — Chennai, India',     img: '/projectTwo.png?w=900&q=80'  },
+  { type: 'Commercial', name: 'Velu Military Mess',             year: '2023 — Dindugal, India',     img: '/projectThree.jpeg?w=700&q=80'  },
+  { type: 'Commercial',    name: 'Jaihind Photography',   year: '2022 — Tirunelveli, India',  img: '/projectFour.png?w=1100&q=80' },
 ]
 
 export default function Projects() {
@@ -15,7 +15,7 @@ export default function Projects() {
           <span className="section-label reveal">Selected Work</span>
           <h2 className="section-title reveal">Our <em>Projects</em></h2>
         </div>
-        <a href="#" className="btn-ghost reveal">All Projects</a>
+        {/* <a href="#" className="btn-ghost reveal">All Projects</a> */}
       </div>
 
       <div className={`${styles.grid} reveal`}>

@@ -1,60 +1,75 @@
 .footer {
-  background: var(--ink);
-  padding: 3rem 4rem;
-  display: flex;
-  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--white);
+}
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  /* Ensure footer is always fully visible */
-  width: 100%;
-  position: relative;
-  z-index: 1;
 }
 
-.logoLink { display: flex; align-items: center; text-decoration: none; }
-.logoImg {
-  height: 44px !important;
-  width: auto !important;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.88;
-  transition: opacity 0.3s;
-}
-.logoImg:hover { opacity: 1; }
-
-.copy {
-  font-size: 0.7rem; color: var(--warm);
-  letter-spacing: 0.1em; text-align: center;
+.logo img {
+  width: 160px;
+  display: block;
 }
 
-.socials { display: flex; gap: 1.5rem; align-items: center; }
-.socials a {
-  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--stone); text-decoration: none; transition: color 0.3s;
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--warm);
 }
-.socials a:hover { color: var(--gold); }
 
-/* ── Tablet ── */
+.social {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.social a {
+  text-decoration: none;
+  color: var(--warm);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.social a:hover {
+  color: var(--gold);
+}
+
 @media (max-width: 1024px) {
-  .footer {
-    flex-direction: column;
-    gap: 1.8rem;
-    text-align: center;
-    padding: 3rem 2rem;
+  .inner {
+    padding: 2rem;
+    gap: 2rem;
   }
-  .logoImg { height: 50px !important; }
+  .logo img {
+    width: 140px;
+  }
 }
 
-/* ── Mobile ── */
-@media (max-width: 600px) {
-  .footer {
-    padding: 2.5rem 1.5rem;
-    gap: 1.5rem;
-  }
-  .socials {
-    flex-wrap: wrap;
+@media (max-width: 768px) {
+  .inner {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
     justify-content: center;
+
+    text-align: center;
+
     gap: 1rem;
+    padding: 2rem 1rem;
   }
-  .copy { font-size: 0.65rem; line-height: 1.7; }
+
+  .social {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
