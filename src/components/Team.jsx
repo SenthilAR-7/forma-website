@@ -53,7 +53,7 @@ export default function Team() {
         <div className={styles.teamGrid}>
           {team.slice(1).map((member) => (
             <div key={member.name} className={styles.memberCard}>
-              <img src={member.image} alt={member.name} loading="lazy" />
+              <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${member.image}`} alt={member.name} loading="lazy" />
               <h4>{member.name}</h4>
               <span>{member.role}</span>
             </div>

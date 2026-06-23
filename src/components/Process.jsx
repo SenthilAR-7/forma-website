@@ -29,7 +29,7 @@ export default function Process() {
                 playsInline
                 preload="metadata"
               >
-                <source src={video} type="video/mp4" />
+                <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${video}`} type="video/mp4" />
               </video>
             )}
           </div>

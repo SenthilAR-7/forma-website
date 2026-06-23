@@ -13,7 +13,7 @@ export default function About() {
       <div className={styles.grid}>
         <div className={`${styles.imageWrap} reveal`}>
           <img
-            src="/firm.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/firm.png`}
             alt="T2BArchitects Architecture Firm"
             loading="lazy"
           />

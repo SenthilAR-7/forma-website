@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.logo}>
-          <img src="/logo.png" alt="T2B Architects Logo" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.png`} alt="T2B Architects Logo" />
         </div>
 
         <div className={styles.copyright}>

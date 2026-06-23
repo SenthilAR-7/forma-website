@@ -63,7 +63,7 @@ export default function Testimonial() {
             loop
             playsInline
           >
-            <source src="/videos/testimonials.mp4" type="video/mp4" />
+            <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/videos/testimonials.mp4`} type="video/mp4" />
           </video>
 
           <button

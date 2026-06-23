@@ -47,7 +47,7 @@ export default function Services() {
               preload="metadata"
               onClick={toggleVideo}
             >
-              <source src="/videos/about-video.mp4" type="video/mp4" />
+              <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/videos/about-video.mp4`} type="video/mp4" />
             </video>
 
             {!playing && (

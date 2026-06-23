@@ -21,7 +21,7 @@ export default function Projects() {
       <div className={`${styles.grid} reveal`}>
         {projects.map(({ type, name, year, img }) => (
           <div className={styles.card} key={name}>
-            <img src={img} alt={name} loading="lazy" />
+            <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${img}`} alt={name} loading="lazy" />
             <div className={styles.info}>
               <p className={styles.type}>{type}</p>
               <h3 className={styles.name}>{name}</h3>
