@@ -10,6 +10,11 @@ const services = [
   { num: '05', title: 'Urban Consulting',      desc: 'Master planning, density studies, and community-driven urban design strategies T2B municipalities and developers shaping tomorrow\'s cities.' },
 ]
 
+const basePath =
+  process.env.NODE_ENV === 'production'
+    ? '/forma-website'
+    : '';
+
 export default function Services() {
   const [open, setOpen] = useState(0)
 
@@ -47,7 +52,7 @@ export default function Services() {
               preload="metadata"
               onClick={toggleVideo}
             >
-              <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/videos/about-video.mp4`} type="video/mp4" />
+              <source src={`${basePath}/videos/about-video.mp4`} type="video/mp4" />
             </video>
 
             {!playing && (
