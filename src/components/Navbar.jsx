@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './Navbar.module.css'
+import { getAssetPath } from '@/lib/getAssetPath';
 
 const navLinks = [
   { href: '#about',    label: 'Studio'   },
@@ -35,7 +36,7 @@ export default function Navbar() {
         {/* Logo image */}
         <a href="#home" className={styles.logoLink}>
           <Image
-            src="/logo.png"
+            src={getAssetPath('/logo.png')}
             alt="T2B Architects — Architecture & Interior Design Firm"
             width={180}
             height={60}
@@ -76,7 +77,7 @@ export default function Navbar() {
         {/* Logo in drawer */}
         <div className={styles.drawerLogoWrap}>
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.png`}
+            src={getAssetPath('/logo.png')}
             alt="T2B Architects"
             width={160}
             height={54}
