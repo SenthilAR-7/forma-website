@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './Navbar.module.css'
-import { getAssetPath } from '@/lib/getAssetPath';
 
 const navLinks = [
   { href: '#about',    label: 'Studio'   },
@@ -11,6 +10,11 @@ const navLinks = [
   { href: '#reels',    label: 'Journal'  },
   { href: '#contact',  label: 'Contact'  },
 ]
+
+const basePath =
+  process.env.NODE_ENV === 'production'
+    ? '/forma-website'
+    : '';
 
 export default function Navbar() {
   const [scrolled,  setScrolled]  = useState(false)
@@ -36,7 +40,7 @@ export default function Navbar() {
         {/* Logo image */}
         <a href="#home" className={styles.logoLink}>
           <Image
-            src={getAssetPath('/logo.png')}
+            src={`${basePath}/logo.png`}
             alt="T2B Architects — Architecture & Interior Design Firm"
             width={180}
             height={60}
@@ -77,7 +81,7 @@ export default function Navbar() {
         {/* Logo in drawer */}
         <div className={styles.drawerLogoWrap}>
           <Image
-            src={getAssetPath('/logo.png')}
+            src={`${basePath}/logo.png`}
             alt="T2B Architects"
             width={160}
             height={54}
