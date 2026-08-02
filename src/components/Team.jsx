@@ -47,7 +47,7 @@ export default function Team() {
 
       <div className={styles.layout}>
         <div className={styles.founderImage}>
-          <img src={team[0].image} alt={team[0].name} loading="lazy" />
+          <img src={`${basePath}/team/Ramkumar.jpeg`} alt={team[0].name} loading="lazy" />
           <div className={styles.founderContent}>
             <h3>{team[0].name}</h3>
             <span>{team[0].role}</span>

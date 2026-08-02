@@ -13,7 +13,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.logo}>
           <img
-            src={`${basePath}/nav_logo.png`}
+            src={`${basePath}/nav_logo.jpg`}
             alt="T2B Architects Logo"/>
         </div>
 

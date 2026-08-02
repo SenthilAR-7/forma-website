@@ -82,7 +82,7 @@ export default function Navbar() {
         {/* Logo in drawer */}
         <div className={styles.drawerLogoWrap}>
           <Image
-            src={`basePath}/logo.png`}
+            src={`${basePath}/logo.png`}
             alt="T2B Architects"
             width={160}
             height={54}
