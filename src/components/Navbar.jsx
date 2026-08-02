@@ -12,6 +12,11 @@ const navLinks = [
   { href: '#contact',  label: 'Contact'  },
 ]
 
+const basePath =
+  process.env.NODE_ENV === 'production'
+    ? '/forma-website'
+    : '';
+
 export default function Navbar() {
   const [scrolled,  setScrolled]  = useState(false)
   const [menuOpen,  setMenuOpen]  = useState(false)
@@ -36,7 +41,7 @@ export default function Navbar() {
         {/* Logo image */}
         <a href="#home" className={styles.logoLink}>
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/nav_logo.jpg`}
+            src={`${basePath}/nav_logo.jpg`}
             alt="T2B Architects — Architecture & Interior Design Firm"
             width={180}
             height={60}
@@ -77,7 +82,7 @@ export default function Navbar() {
         {/* Logo in drawer */}
         <div className={styles.drawerLogoWrap}>
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.png`}
+            src={`basePath}/logo.png`}
             alt="T2B Architects"
             width={160}
             height={54}

@@ -8,6 +8,11 @@ const heroImages = [
   '/hero/hero3.jpg',
 ]
 
+const basePath =
+  process.env.NODE_ENV === 'production'
+    ? '/forma-website'
+    : '';
+
 export default function Hero() {
   const [current, setCurrent] = useState(0)
   useEffect(() => {
@@ -51,7 +56,7 @@ export default function Hero() {
           {heroImages.map((image, index) => (
             <Image
               key={index}
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${image}`}
+              src={`${basePath}${image}`}
               alt={`Hero ${index + 1}`}
               fill
               priority={index === 0}

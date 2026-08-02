@@ -21,6 +21,11 @@ const testimonials = [
   },
 ];
 
+const basePath =
+  process.env.NODE_ENV === 'production'
+    ? '/forma-website'
+    : '';
+
 export default function Testimonial() {
   const [current, setCurrent] = useState(0);
   const [muted, setMuted] = useState(true)
@@ -63,7 +68,7 @@ export default function Testimonial() {
             loop
             playsInline
           >
-            <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/videos/testimonials.mp4`} type="video/mp4" />
+             <source src={`${basePath}/videos/testimonials.mp4`} type="video/mp4" />
           </video>
 
           <button

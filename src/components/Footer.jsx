@@ -2,15 +2,19 @@ import styles from "./Footer.module.css";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
 
+const basePath =
+  process.env.NODE_ENV === 'production'
+    ? '/forma-website'
+    : '';
+    
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.logo}>
           <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/nav_logo.jpg`}
-            alt="T2B Architects Logo"
-          />
+            src={`${basePath}/nav_logo.png`}
+            alt="T2B Architects Logo"/>
         </div>
 
         <div className={styles.copyright}>
