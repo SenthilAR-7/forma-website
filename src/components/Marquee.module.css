@@ -1,15 +1,32 @@
 .strip {
   background: var(--gold); padding: 1rem 0;
-  overflow: hidden; white-space: nowrap;
+  overflow: hidden;
 }
+
 .inner {
   display: inline-flex; gap: 3rem;
-  animation: marquee 22s linear infinite;
+  animation: marquee 30s linear infinite;
+  width: max-content;
 }
+
 .inner span {
-  font-family: var(--ff-display); font-style: italic;
+  font-family: var(--ff-display); font-style: normal;
   font-size: 1.1rem; color: var(--white); letter-spacing: 0.08em;
 }
+
+.item{
+    display:flex;
+    align-items:center;
+    white-space:nowrap;
+}
+
+.item span:first-child{
+    font-family:var(--ff-display);
+    font-size:1.05rem;
+    color:#fff;
+    letter-spacing:.08em;
+}
+
 .dot { color: rgba(255,255,255,0.5) !important; font-style: normal !important; }
 
 @keyframes marquee {

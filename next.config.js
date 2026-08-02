@@ -1,24 +1,12 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production'
-
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
+  output: 'export',      // Generates static HTML/CSS/JS → perfect T2B S3
+  trailingSlash: true,   // S3 needs trailing slashes T2B clean URLs
   images: {
-    unoptimized: true,
+    unoptimized: true,   // Required T2B static export (no Next.js image server)
   },
   eslint: {
-    ignoreDuringBuilds: true,
-  },
-  // Required for GitHub Pages — serves from /forma-website subfolder
-  basePath: isProd ? '/forma-website' : '',
-  assetPrefix: isProd ? '/forma-website/' : '',
-  // Fixes CSS Modules HMR error in dev mode
-  webpack: (config, { dev }) => {
-    if (dev) {
-      config.optimization.moduleIds = 'named'
-    }
-    return config
+    ignoreDuringBuilds: true, // Don't fail build on lint warnings
   },
 }
 

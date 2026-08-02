@@ -1,13 +1,13 @@
 .nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1rem 4rem;
   transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
-}
-.scrolled {
   background: rgba(253, 250, 245, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+}
+.scrolled {
   padding: 0.6rem 4rem;
   box-shadow: 0 1px 0 var(--sand);
 }

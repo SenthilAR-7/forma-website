@@ -25,10 +25,10 @@ export default function HomePage() {
         <About />
         <Projects />
         <Services />
-        <InstagramReels />
         <Process />
-        <Testimonial />
         <Team />
+        <Testimonial />
+        <InstagramReels />
         <Contact />
         <Footer />
       </main>

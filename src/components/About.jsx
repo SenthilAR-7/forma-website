@@ -6,10 +6,6 @@ const stats = [
   // { num: '24',  label: 'Design Awards'       },
   // { num: '12',  label: 'Countries Built'     },
 ]
-const basePath =
-  process.env.NODE_ENV === 'production'
-    ? '/forma-website'
-    : '';
 
 export default function About() {
   return (
@@ -17,7 +13,7 @@ export default function About() {
       <div className={styles.grid}>
         <div className={`${styles.imageWrap} reveal`}>
           <img
-            src={`${basePath}/firm.png`}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/firm.png`}
             alt="T2BArchitects Architecture Firm"
             loading="lazy"
           />

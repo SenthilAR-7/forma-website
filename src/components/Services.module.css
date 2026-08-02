@@ -38,11 +38,11 @@
 }
 .body { flex: 1; }
 .title {
-  font-family: var(--ff-display); font-size: 1.3rem; font-weight: 300;
+  font-family: var(--ff-display); font-size: 1.3rem; font-weight: bold;
   margin-bottom: 0.5rem; color: var(--ink);
 }
 .desc {
-  font-size: 0.82rem; line-height: 1.7; color: var(--warm);
+  font-size: 0.95rem; line-height: 1.7; color: var(--warm);
   max-height: 0; overflow: hidden;
   transition: max-height 0.4s ease, opacity 0.4s;
   opacity: 0;

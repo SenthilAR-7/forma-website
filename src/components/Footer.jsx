@@ -1,17 +1,16 @@
 import styles from "./Footer.module.css";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
-
-const basePath =
-  process.env.NODE_ENV === 'production'
-    ? '/forma-website'
-    : '';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.logo}>
-          <img src={`${basePath}/logo.png`} alt="T2B Architects Logo" />
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/nav_logo.jpg`}
+            alt="T2B Architects Logo"
+          />
         </div>
 
         <div className={styles.copyright}>
@@ -20,27 +19,21 @@ export default function Footer() {
 
         <div className={styles.social}>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/t2b_architects"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Instagram"
           >
-            Instagram
+            <FaInstagram />
           </a>
 
           <a
-            href="https://facebook.com"
+            href="https://wa.me/9750433204"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="WhatsApp"
           >
-            Facebook
-          </a>
-
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
+            <FaWhatsapp />
           </a>
         </div>
       </div>

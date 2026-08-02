@@ -13,13 +13,12 @@ const reels = [
     sub: "Modern Residence"
   },
   {
-    url: "https://www.instagram.com/reel/DVyNEkRplCx/",
+    url: "https://www.instagram.com/reel/DUheI0RE0Wp/",
     title: "Design Process",
     sub: "Behind The Scenes"
-  }
-  ,
+  },
   {
-    url: "https://www.instagram.com/reel/DVm7CLeDx2C/",
+    url: "https://www.instagram.com/reel/DJwaRGrPXQT/",
     title: "Designn Process",
     sub: "Behindd The Scenes"
   }
@@ -32,7 +31,7 @@ export default function InstagramReels() {
       <div className={styles.header}>
         <div>
           <h2 className="section-title">
-            Follow our <em>journey</em>
+            Follow our <em>Journey</em>
             <br />
             on Instagram
           </h2>
@@ -61,6 +60,7 @@ export default function InstagramReels() {
               title={title}
               loading="lazy"
               className={styles.reelFrame}
+              allow="encrypted-media"
               allowFullScreen
             />
           </div>

@@ -15,10 +15,10 @@
   color: rgba(184,147,90,0.25); line-height: 1; margin-bottom: 1rem;
 }
 .title {
-  font-family: var(--ff-display); font-size: 1.3rem; font-weight: 300;
+  font-family: var(--ff-display); font-size: 1.3rem; font-weight: bold;
   color: var(--ink); margin-bottom: 0.7rem;
 }
-.desc { font-size: 0.82rem; line-height: 1.7; color: var(--warm); }
+.desc { font-size: 0.95rem; line-height: 1.7; color: var(--warm); }
 
 .processVideo {
   width: 100%;

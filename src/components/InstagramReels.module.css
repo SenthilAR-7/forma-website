@@ -1,7 +1,7 @@
 .section { background: var(--ink); padding: 7rem 4rem; overflow: hidden; }
 .section .section-label { color: var(--gold); }
 .section :global(.section-title) { color: var(--white); }
-.section :global(.section-title) em { color: var(--stone); }
+.section :global(.section-title) em { color: var(--gold); }
 
 .header {
   display: flex; justify-content: space-between; align-items: flex-end;

@@ -1,18 +1,19 @@
 import styles from './Marquee.module.css'
 
-const items = ['Architecture','Interior Design','Landscape','Urban Planning','Spatial Concepts','Renovation']
+const items = ['Architecture','Landscape','Urban Planning','Spatial Concepts','Residence','Commercial','Interior Design','Renovation','Office Interiors']
 
 export default function Marquee() {
   const doubled = [...items, ...items]
   return (
-    <div className={styles.strip} aria-hidden="true">
+    <div className={styles.strip}>
       <div className={styles.inner}>
-        {doubled.map((item, i) => (
-          <span key={i} className={i % 2 === 1 ? styles.dot : ''}>
-            {i % 2 === 1 ? '·' : item}
-          </span>
+        {items.map((item, i) => (
+          <div key={i} className={styles.item}>
+            <span>{item}</span>
+            <span className={styles.dot}>•</span>
+          </div>
         ))}
       </div>
     </div>
-  )
+  );
 }

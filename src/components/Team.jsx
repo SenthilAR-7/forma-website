@@ -29,11 +29,6 @@ const team = [
   },
 ];
 
-const basePath =
-  process.env.NODE_ENV === 'production'
-    ? '/forma-website'
-    : '';
-
 export default function Team() {
   return (
     <section className={styles.section} id="team">
@@ -47,7 +42,7 @@ export default function Team() {
 
       <div className={styles.layout}>
         <div className={styles.founderImage}>
-          <img src={`${basePath}/team/Ramkumar.jpeg`} alt={team[0].name} loading="lazy" />
+          <img src={team[0].image} alt={team[0].name} loading="lazy" />
           <div className={styles.founderContent}>
             <h3>{team[0].name}</h3>
             <span>{team[0].role}</span>
@@ -58,7 +53,7 @@ export default function Team() {
         <div className={styles.teamGrid}>
           {team.slice(1).map((member) => (
             <div key={member.name} className={styles.memberCard}>
-              <img src={`${basePath}${member.image}`} alt={member.name} loading="lazy" />
+              <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${member.image}`} alt={member.name} loading="lazy" />
               <h4>{member.name}</h4>
               <span>{member.role}</span>
             </div>

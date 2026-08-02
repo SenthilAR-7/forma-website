@@ -55,8 +55,9 @@ body {
 section { padding: 7rem 4rem; }
 
 .section-label {
-  font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
+  font-size: 1rem; letter-spacing: 0.35em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 1.2rem; display: block;
+  font-weight: bold;
 }
 .section-title {
   font-family: var(--ff-display);
@@ -64,16 +65,16 @@ section { padding: 7rem 4rem; }
   font-weight: 300; line-height: 1.05;
   color: var(--ink);
 }
-.section-title em { font-style: italic; color: var(--warm); }
+.section-title em { font-style: normal; color: var(--gold); }
 
 .team-title {
   font-family: var(--ff-display);
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 300; line-height: 1.05;
+  font-weight: 300; line-height: 1.15;
   color: var(--ink);
 }
 
-.team-title em { font-style: italic; color: orange; }
+.team-title em { font-style: normal; color: var(--gold); }
 
 /* ===== REVEAL ANIMATION ===== */
 .reveal {

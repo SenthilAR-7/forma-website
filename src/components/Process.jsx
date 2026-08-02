@@ -7,11 +7,6 @@ const steps = [
   { num: '04', title: 'Realisation',  desc: 'On-site supervision and quality control to ensure the built result honours the original vision.' },
 ]
 
-const basePath =
-  process.env.NODE_ENV === 'production'
-    ? '/forma-website'
-    : '';
-
 export default function Process() {
   return (
     <section className={styles.section} id="process">
@@ -34,7 +29,7 @@ export default function Process() {
                 playsInline
                 preload="metadata"
               >
-                <source src={`${basePath}${video}`} type="video/mp4" />
+                <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${video}`} type="video/mp4" />
               </video>
             )}
           </div>

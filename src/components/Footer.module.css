@@ -25,22 +25,30 @@
 }
 
 .social {
-  display: flex;
-  justify-content: flex-end;
-  gap: 2rem;
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:22px;
 }
 
 .social a {
-  text-decoration: none;
-  color: var(--warm);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
+  width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(184,147,90,.25);
+    border-radius:50%;
+    color:var(--gold);
+    font-size:1.2rem;
+    transition:.3s ease;
 }
 
 .social a:hover {
-  color: var(--gold);
+  background:var(--gold);
+  color:white;
+  transform:translateY(-3px);
+  border-color:var(--gold);
 }
 
 @media (max-width: 1024px) {
