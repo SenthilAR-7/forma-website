@@ -3,9 +3,10 @@ import Image from 'next/image'
 import styles from './Hero.module.css'
 
 const heroImages = [
-  '/hero/hero1.jpg',
-  '/hero/hero2.jpg',
-  '/hero/hero3.jpg',
+  '/hero/hero1.png',
+  '/hero/hero2.png',
+  '/hero/hero3.jpeg',
+  '/hero/hero4.png',
 ]
 
 const basePath =
@@ -18,7 +19,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent(prev => (prev + 1) % heroImages.length)
-    }, 6000)
+    }, 8000)
 
     return () => clearInterval(timer)
   }, [])

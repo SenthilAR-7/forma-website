@@ -41,7 +41,7 @@ export default function Navbar() {
         {/* Logo image */}
         <a href="#home" className={styles.logoLink}>
           <Image
-            src={`${basePath}/nav_logo.jpg`}
+            src={`${basePath}/logo.png`}
             alt="T2B Architects — Architecture & Interior Design Firm"
             width={180}
             height={60}
